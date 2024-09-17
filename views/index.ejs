@@ -1,0 +1,23 @@
+<%- include("templates/header.ejs") %>
+
+
+<div class="container ">
+    <h2>Enter the ID of the coin:</h2>
+    <form name='form' action="/coin" method="POST" onsubmit="return validateForm()" required>
+        <input type="text" name="coinId" id="inputId">
+        <button type="submit" class="btn btn-secondary" style="width: 100px;">Search</button> 
+    </form>
+</div>
+
+<script>
+
+    function validateForm(){
+        var x = document.forms["form"]["coinId"].value;;
+        console.log(x);
+        if(x == ""){
+            alert("The id must be filled out");
+            return false;
+        }
+    }
+</script>
+<%- include("templates/footer.ejs") %>
